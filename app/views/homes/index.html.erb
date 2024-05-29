@@ -19,13 +19,13 @@
 <ul>
 <li><a>日本酒について</a></li>
 <li><a>日本酒を探す</a></li>
-  <%# if user_signed_in? %>
-<li><a>新規登録</a></li>
-<li><a>ログイン</a></li>
-  <%# else %>
-<li><a>新規登録</a></li>
-<li><a>ログイン</a></li>
-  <%# end %>
+  <% if user_signed_in? %>
+<li><%= link_to 'マイページ', "/users/#{current_user.id}", class: "user-nickname"%></li>
+<li><%= link_to 'ログアウト', destroy_user_session_path , data: { turbo_method: :delete }, class: "logout" %></li>
+  <% else %>
+<li><%= link_to '新規登録', new_user_registration_path , class: "sign-up" %></li>
+<li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+  <% end %>
 </ul>
 </nav>
 
@@ -112,11 +112,15 @@
 <h2>Contents</h2>
 <ul class="submenu">
 <li><a href="index.html">ホーム</a></li>
-<li><a href="greeting.html">ご挨拶</a></li>
-<li><a href="room.html">お部屋のご紹介</a></li>
-<li><a href="dining.html">お料理について</a></li>
-<li><a href="service.html">施設・サービスのご案内</a></li>
-<li><a href="contact.html">ご予約・お問合せ</a></li>
+<li><a href="greeting.html">日本酒について</a></li>
+<li><a href="room.html">日本酒を探す</a></li>
+  <% if user_signed_in? %>
+<li><%= link_to 'マイページ', "/users/#{current_user.id}", class: "user-nickname"%></li>
+<li><%= link_to 'ログアウト', destroy_user_session_path , data: { turbo_method: :delete }, class: "logout" %></li>
+  <% else %>
+<li><%= link_to '新規登録', new_user_registration_path , class: "sign-up" %></li>
+<li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+  <% end %>
 </ul>
 </nav>
 
