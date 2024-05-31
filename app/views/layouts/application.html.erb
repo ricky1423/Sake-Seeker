@@ -8,7 +8,8 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'slide', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'show', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
 
   </head>
@@ -20,7 +21,7 @@
   <footer>
 
 <ul id="footermenu">
-<li><a href="index.html">ホーム</a></li>
+<li><%= link_to 'ホーム', root_path %></li>
 </ul>
 
 <div class="copy">

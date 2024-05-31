@@ -1,0 +1,108 @@
+.sort_sake{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.sake{
+  font-size: 32px;
+  font-weight: 700;
+  color: #dbb36e;
+}
+
+.sort-content{
+  width: 200px;
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+}
+
+.sort-name{
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+  padding: 11px 28px 11px 15px;
+  line-height: 1;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+/* 商品一覧 */
+
+a {
+  text-decoration: none;
+}
+
+.item-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1vh 0;
+}
+
+.item-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.item-img-content {
+  position: relative;
+  margin-left: 25px;
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.item-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.item-name {
+  font-size: 4vh;
+  margin-top: 5px;
+}
+
+.item-name_kana{
+  color: orange;
+}
+
+.item-price {
+  font-size: 2.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.star-btn {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+}
+
+.star-count {
+  font-size: 2vh;
+}
+
+/* //商品一覧 */
