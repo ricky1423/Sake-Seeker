@@ -18,6 +18,8 @@
 
 <main>
 
+
+
   <div class="sort_sake">
     <h2 class="sake">日本酒</h2>
     <div class="sort-content">
@@ -28,6 +30,11 @@
       </select>
     </div>
   </div>
+
+  <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "日本酒を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+  <% end %>
 
 
 <div class='item-contents'>

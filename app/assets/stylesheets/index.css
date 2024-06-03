@@ -106,3 +106,32 @@ a {
 }
 
 /* //商品一覧 */
+
+.search-form {
+  display: flex;
+  justify-content: center; 
+  height:70px;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.search-form .search-input {
+  width:300px;
+  padding:0 15px;
+  border-radius:4px 0 0 4px;
+  background:#eee;
+  border:none;
+  outline:0;
+}
+
+.search-form .search-btn {
+  width:70px;
+  
+  border-radius:0 4px 4px 0;
+  background:#7fbfff;
+  border:none;
+  color:#fff;
+  font-size:16px;
+  cursor: pointer;
+}
