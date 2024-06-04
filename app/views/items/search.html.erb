@@ -35,9 +35,14 @@
 
 
   <div class="contents row">
-    <% @items.each do |item| %>
+    <div class='item-contents'>
+      <ul class='item-lists'>
+            <% @items.each do |item| %>
       <%= render partial: "items/item", locals: { item: item } %>
-    <% end %>
+             <% end %>
+      </ul>
+    </div>
+
   </div>
 
 
@@ -57,8 +62,8 @@
 <nav>
 <h2>Contents</h2>
 <ul class="submenu">
-<li><a href="index.html">ホーム</a></li>
-<li><a href="greeting.html">日本酒について</a></li>
+<li><%= link_to 'ホーム', root_path %></li>
+<li><%= link_to '日本酒について', abouts_path %></li>
 <li><%= link_to '日本酒を探す', items_path %></li>
   <% if user_signed_in? %>
 <li><%= link_to 'マイページ', "/users/#{current_user.id}", class: "user-nickname"%></li>

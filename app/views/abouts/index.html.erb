@@ -130,12 +130,16 @@
 <nav>
 <h2>Contents</h2>
 <ul class="submenu">
-<li><a href="index.html">ホーム</a></li>
-<li><a href="greeting.html">ご挨拶</a></li>
-<li><a href="room.html">お部屋のご紹介</a></li>
-<li><a href="dining.html">お料理について</a></li>
-<li><a href="service.html">施設・サービスのご案内</a></li>
-<li><a href="contact.html">ご予約・お問合せ</a></li>
+<li><%= link_to 'ホーム', root_path %></li>
+<li><%= link_to '日本酒について', abouts_path %></li>
+<li><%= link_to '日本酒を探す', items_path %></li>
+  <% if user_signed_in? %>
+<li><%= link_to 'マイページ', "/users/#{current_user.id}", class: "user-nickname"%></li>
+<li><%= link_to 'ログアウト', destroy_user_session_path , data: { turbo_method: :delete }, class: "logout" %></li>
+  <% else %>
+<li><%= link_to '新規登録', new_user_registration_path , class: "sign-up" %></li>
+<li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+  <% end %>
 </ul>
 </nav>
 
