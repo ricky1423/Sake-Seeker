@@ -25,7 +25,6 @@ $(function() {
 	});
 });
 
-
 // 同一ページへのリンクの場合に開閉メニューを閉じる処理
 $(function() {
 	$('#menubar a[href^="#"]').click(function() {
@@ -80,5 +79,4 @@ $(function() {
 		$('.openclose').not(this).next().slideUp();
 	});
 });
-
 
