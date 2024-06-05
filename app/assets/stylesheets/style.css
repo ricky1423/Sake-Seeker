@@ -4,7 +4,7 @@
 
 /*リセットCSS（sanitize.css）の読み込み
 ---------------------------------------------------------------------------*/
-@import url("https://unpkg.com/sanitize.css");
+/* @import url("https://unpkg.com/sanitize.css"); */
 
 /*Google Fontsの読み込み
 ---------------------------------------------------------------------------*/
@@ -162,6 +162,8 @@ header nav a {
 	border: 1px solid transparent;	/*枠線を透明(transparent)でセットしておく*/
 }
 
+
+
 /*マウスオン時*/
 header nav a:hover {
 	opacity: 1;						/*冒頭のaタグで、hover時にopacityが0.8でセットされているのを一旦リセット。hoverで薄くならないようにする。*/
@@ -175,38 +177,6 @@ body.ja header nav {
 	text-orientation: upright;
 }
 
-/*英語ページ*/
-body.en header nav {
-	font-size: 0.9rem;	/*bodyで指定している文字サイズの90%にする*/
-	text-align: center;	/*テキストをセンタリング。左寄せがいいならこの１行を削除。*/
-}
-body.en header nav a {
-	padding: 0.5em 1em;	/*上下、左右へのボタン内の余白の上書き*/
-}
-
-
-/*「English」というメニューパーツ
----------------------------------------------------------------------------*/
-/*メニューブロック全体*/
-.lang-menu {
-	margin: 0; padding: 0; list-style: none;
-	font-family: Arial, Helvetica, sans-serif;	/*明朝体だと見づらいのでゴシック体にする*/
-	position: absolute;
-	left: 3%;	/*画面の左からの配置指定*/
-	top: 3%;	/*画面の上からの配置指定*/
-	font-size: 0.8rem;	/*bodyで指定している文字サイズの80%にする*/
-}
-
-/*メニュー１個あたり（テンプレートではEnglishの１つしかセットしていませんが、言語メニューを複数セットできます）*/
-.lang-menu li {
-	display: inline-block;
-}
-.lang-menu a {
-	text-decoration: none;display: inline-block;
-	border: 1px solid #fff;	/*枠線の幅、線種、色*/
-	padding: 0 1em;			/*上下、左右へのメニュー内の余白*/
-	color: #fff;	/*文字色*/
-}
 
 
 /*mainブロック
@@ -251,43 +221,6 @@ main h3 {
 p + h3,p + h2 {margin-top: 2rem;}
 
 
-/*「ご挨拶」ページの見出し
----------------------------------------------------------------------------*/
-#greeting {
-	background: url(../images/2.jpg) no-repeat center center / cover;	/*背景画像の読み込み*/
-	padding: 1rem;				/*ボックス内の余白。１文字分。*/
-	margin-left: -100px;		/*mainのmarginの数字にマイナスをつけます。*/
-	width: calc(100% + 200px);	/*mainのmarginの２倍をここの200pxでセットしています。上の行で左に-100pxずれた画像を幅一杯にする為の設定です。*/
-	color: #fff;			/*文字色*/
-}
-
-
-/*縦書き用の設定
----------------------------------------------------------------------------*/
-/*ボックス全体*/
-.title-bg {
-	display: flex;				/*flexボックスを使う指定*/
-	justify-content: center;	/*並びかたの種類の指定*/
-}
-
-/*ボックス内のh2*/
-.title-bg h2 {
-	display: flex;			/*flexボックスを使う指定*/
-	flex-direction: column;	/*縦並びにする指定*/
-	align-items: center;	/*垂直揃えの指定。天地中央に配置されるように。*/
-}
-
-/*縦書きにする指定*/
-.title-bg h2 .tate {
-	writing-mode: vertical-rl;
-	text-orientation: upright;
-}
-
-/*横書きで使う際の指定。※縦書きを横書きにする為の指定ではないのでご注意下さい。*/
-.title-bg h2 .yoko {
-	margin-top: 1rem;	/*上に空けるスペース*/
-	font-size: 0.4em;	/*文字サイズ。親要素の40%。*/
-}
 
 
 /*menubarブロック初期設定
@@ -439,99 +372,8 @@ footer a {text-decoration: none;}
 }
 
 
-/*お部屋のご紹介ページ
----------------------------------------------------------------------------*/
-/*listボックス。１個あたりのボックスの指定です。*/
-.list {
-	display: flex;		/*flexボックスを使う指定*/
-	padding: 25px 0;	/*上下、左右へのボックス内の余白*/
-}
-
-	/*画面幅900px以上の追加指定*/
-	@media screen and (min-width:900px) {
-
-		/*お部屋のご紹介ページ
-		---------------------------------------------------------------------------*/
-		/*listボックス。１個あたりのボックスの指定です。*/
-		.list {
-			padding-left: 10px;	/*ボックス内の左側にだけ余白を作る*/
-		}
-		
-	}
-	/*画面幅900px以上の追加指定ここまで*/
-
-.list div {
-	flex: 1;
-}
-
-/*ボックス内のfigure画像*/
-.list figure {
-	width: 20%;			/*画像の幅*/
-	margin-right: 20px;	/*画像の右側に空けるスペース*/
-}
-
-/*ボックス内のh4タグ*/
-.list h4 {
-	margin: 0 0 0.5em;
-	font-size: 1.2rem;
-}
-
-/*ボックス内のpタグ*/
-.list p {
-	margin: 0 0 1em;
-	font-size: 0.8rem;
-}
 
 
-/*お部屋のご紹介ページのlistボックス内の情報詳細欄（tableっぽく見える所）
----------------------------------------------------------------------------*/
-/*ボックス全体*/
-dl.line {
-	margin: 0;
-	display: flex;		/*flexボックスを使う指定*/
-	flex-wrap: wrap;	/*折り返す指定*/
-	font-size: 0.8em;	/*文字サイズを80%に。*/
-	border-top: 1px solid rgba(0,0,0,0.1);	/*上の線の幅、線種、色*/
-}
-
-/*左右のボックス*/
-dl.line dt, dl.line dd {
-	border-bottom: 1px solid rgba(0,0,0,0.1);	/*下線の幅、線種、色*/
-	padding: 2px 10px;					/*上下、左右へのボックス内の余白*/
-}
-
-/*左のボックス*/
-dl.line dt {
-	width: 8em;	/*幅。8文字(em)分。*/
-}
-/*右のボックス*/
-dl.line dd {
-	width: calc(100% - 8em);	/*「8em」は上の「dl.line dt」のwidthの値です。*/
-}
-
-	/*画面幅900px以上の追加指定*/
-	@media screen and (min-width:900px) {
-
-		/*お部屋のご紹介ページのlistボックス内の情報詳細欄（tableっぽく見える所）
-		---------------------------------------------------------------------------*/
-		/*listブロック内でのline設定*/
-		.list dl.line dd {
-			width: calc(50% - 8em - 10px);	/*大きな端末向けの再設定。２列にしたいので、100%でなく半分の50%から引いています。*/
-			margin-right: 10px;				/*２列になった際の間のスペース*/
-		}
-
-		.list dl.line {border-top: none;}
-
-		.list dl.line dt:nth-of-type(1), .list dl.line dd:nth-of-type(1),
-		.list dl.line dt:nth-of-type(2), .list dl.line dd:nth-of-type(2) {
-			border-top: 1px solid rgba(0,0,0,0.1);
-		}
-
-	}
-	/*画面幅900px以上の追加指定ここまで*/
-
-
-/*2カラムブロック（※900px未満では１カラム）
 ---------------------------------------------------------------------------*/
 /*２カラムを囲むブロック*/
 .c2 {

@@ -1,3 +1,4 @@
+const set= () => {
 
 //main h2が画面内にきたら、スタイルlinestyleを適用する
 $('main h2').on('inview', function() {
@@ -48,3 +49,10 @@ $('.blur').on('inview', function() {
 $('.cracker').on('inview', function() {
 	$('.cracker').append('<span class="crackerstyle"><img src="images/cracker.gif" alt=""><img src="images/cracker.gif" alt=""></span>');
 });
+
+};
+
+
+window.addEventListener("turbo:load",set );
+window.addEventListener("turbo:click", set);
+window.addEventListener("turbo:render", set);

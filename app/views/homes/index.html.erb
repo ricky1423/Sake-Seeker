@@ -13,18 +13,18 @@
 
 <header>
 
-<h1 id="logo"><%= link_to image_tag ("sake.jpg") %></h1>
+<h1 id="logo"><%= link_to image_tag("sake.jpg") , root_path ,data: { turbo: false }%></h1>
 
 <nav>
 <ul>
-<li><%= link_to '日本酒について', abouts_path %></li>
-<li><%= link_to '日本酒を探す', items_path %></li>
+<li><%= link_to '日本酒について', abouts_path ,data: { turbo: false }%></li>
+<li><%= link_to '日本酒を探す', items_path ,data: { turbo: false }%></li>
   <% if user_signed_in? %>
-<li><%= link_to 'マイページ', "/users/#{current_user.id}", class: "user-nickname"%></li>
-<li><%= link_to 'ログアウト', destroy_user_session_path , data: { turbo_method: :delete }, class: "logout" %></li>
+<li><%= link_to 'マイページ', "/users/#{current_user.id}", class: "user-nickname" ,data: { turbo: false }%></li>
+<a><%= button_to 'ログアウト', destroy_user_session_path ,method: :delete ,data: { turbo: false }, class: "logout" %></a>
   <% else %>
-<li><%= link_to '新規登録', new_user_registration_path , class: "sign-up" %></li>
-<li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+<li><%= link_to '新規登録', new_user_registration_path , class: "sign-up" ,data: { turbo: false }%></li>
+<li><%= link_to 'ログイン', new_user_session_path, class: "login" ,data: { turbo: false }%></li>
   <% end %>
 </ul>
 </nav>
@@ -41,64 +41,6 @@
 
 <main>
 
-<section class="blur">
-
-<div class="title-bg">
-<h2><div class="tate">お知らせ</div><div class="yoko">News</div></h2>
-</div>
-
-<div class="new">
-
-<dl>
-<dt>2023.07.14</dt>
-<dd>tp_yado6配布開始。</dd>
-<dt>2023.00.00</dt>
-<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-<dt>2023.00.00</dt>
-<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-<dt>2023.00.00</dt>
-<dd>サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。サンプルテキスト。</dd>
-</dl>
-
-<div class="r">
-<p class="animation-btn">
-<a href="#" class="animation-btn-inner">もっとみる<i class="bi bi-arrow-right"></i></a>
-</p>
-</div>
-
-</div>
-<!--/.new-->
-
-</section>
-
-<section class="blur">
-
-
-<!--/.list-slide-->
-
-</section>
-
-<section class="blur">
-
-<h2>テンプレートのご利用前に必ずお読み下さい<span>Read me</span></h2>
-
-<h3 class="c">利用規約のご案内</h3>
-<p>このテンプレートは、<a href="https://template-party.com/">Template Party</a>にて無料配布している『旅館・料亭向け 無料ホームページテンプレート tp_yado6』です。必ずダウンロード先のサイトの<a href="https://template-party.com/read.html">利用規約</a>をご一読の上でご利用下さい。</p>
-<p><strong class="color-check">HP最下部の著作表示『Web Design:Template-Party』は無断で削除しないで下さい。</strong><br>
-わざと見えなく加工する事も禁止です。</p>
-<p><strong class="color-check">下部の著作を外したい場合は</strong><br>
-<a href="https://template-party.com/">Template-Party</a>の<a href="https://template-party.com/member.html">ライセンス契約</a>を行う事でHP下部の著作を外す事ができます。</p>
-
-<h3 class="c">当テンプレートの詳しい使い方は</h3>
-<div class="c">
-<p class="animation-btn">
-<a href="about.html" class="animation-btn-inner">こちらをご覧下さい</a>
-</p>
-</div>
-
-</section>
-
-</main>
 
 
 
@@ -111,24 +53,24 @@
 <nav>
 <h2>Contents</h2>
 <ul class="submenu">
-<li><%= link_to 'ホーム', root_path %></li>
-<li><%= link_to '日本酒について', abouts_path %></li>
-<li><%= link_to '日本酒を探す', items_path %></li>
+<li><%= link_to 'ホーム', root_path ,data: { turbo: false }%></li>
+<li><%= link_to '日本酒について', abouts_path ,data: { turbo: false }%></li>
+<li><%= link_to '日本酒を探す', items_path ,data: { turbo: false }%></li>
   <% if user_signed_in? %>
-<li><%= link_to 'マイページ', "/users/#{current_user.id}", class: "user-nickname"%></li>
-<li><%= link_to 'ログアウト', destroy_user_session_path , data: { turbo_method: :delete }, class: "logout" %></li>
+<li><%= link_to 'マイページ', "/users/#{current_user.id}", class: "user-nickname",data: { turbo: false }%></li>
+<li><%= button_to 'ログアウト', destroy_user_session_path ,method: :delete ,data: { turbo: false }, class: "logout" %></li>
   <% else %>
-<li><%= link_to '新規登録', new_user_registration_path , class: "sign-up" %></li>
-<li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+<li><%= link_to '新規登録', new_user_registration_path , class: "sign-up" ,data: { turbo: false }%></li>
+<li><%= link_to 'ログイン', new_user_session_path, class: "login" ,data: { turbo: false }%></li>
   <% end %>
 </ul>
 </nav>
 
 <ul class="icons">
-<li><a href=""><i class="bi bi-facebook"></i></a></li>
-<li><a href=""><i class="bi bi-twitter"></i></a></li>
-<li><a href=""><i class="bi bi-youtube"></i></a></li>
-<li><a href=""><i class="bi bi-instagram"></i></a></li>
+<li><i class="bi bi-facebook"></i></li>
+<li><i class="bi bi-twitter"></i></li>
+<li><i class="bi bi-youtube"></i></li>
+<li><i class="bi bi-instagram"></i></li>
 </ul>
 
 </div>
@@ -144,21 +86,6 @@
 
 <!--jQueryの読み込み-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<!--lightbox用jsファイルの読み込み-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox-plus-jquery.min.js"></script>
-
-<!--パララックス（inview）-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
-<script src="js/jquery.inview_set.js"></script>
-
-<!--スライドショー（slick）-->
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="js/slick.js"></script>
-
-<!--このテンプレート専用のスクリプト-->
-<script src="js/main.js"></script>
-
 
 
 </body>

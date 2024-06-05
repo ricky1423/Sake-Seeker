@@ -1,3 +1,5 @@
+const main = () => {
+
 //タイマー
 $(function() {
 	var timer = false;
@@ -80,3 +82,8 @@ $(function() {
 	});
 });
 
+};
+
+window.addEventListener("turbo:load", main);
+window.addEventListener("turbo:click", main);
+window.addEventListener("turbo:render", main);
