@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_06_05_073612) do
   create_table "items", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "name", null: false
     t.string "name_kana", null: false
     t.string "category", null: false
@@ -22,6 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_05_073612) do
     t.text "explain", null: false
     t.text "image", null: false
     t.string "prefecture", null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "likes", charset: "utf8", force: :cascade do |t|
@@ -47,6 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_05_073612) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "items", "users"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
 end
