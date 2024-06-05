@@ -770,3 +770,7 @@ dl.line dd {
 	/*画面幅900px以上の追加指定ここまで*/
 
 
+	.my {
+		text-align: center;
+		font-size: 50px;
+	}

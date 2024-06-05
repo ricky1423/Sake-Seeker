@@ -14,14 +14,44 @@
 <div id="container">
 
 
+    <h2><div class="my">
+    <p><%= @nickname %>さんのお気に入り</p>
+    </div></h2>
 
+
+<% if @like_items.present? %>
+  <div class='item-contents'>
+  <ul class='item-lists'>
+  <% @like_items.each do |item| %>
+    <li class='list'>
+      <%= link_to item_path(item),data: { turbo: false } do %>
+      <div class='item-img-content'>
+        <%= image_tag item.image, class: "item-img" %>
+        </div>
+        <div class='item-info'>
+          <div class='item-name'>
+            <%= item.name %>
+          </div>
+          <span class='item-name_kana'>
+            <%= item.name_kana %>
+          </span>
+            <span>|</span>
+          <span class='item-name_kana'>
+            <%= item.prefecture %>
+          </span>
+          <div class='item-price'>
+            <span><%= item.price %>円 </span>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+  </ul>
+  </div>
+  <% end %>
 <main>
 
-<section>
-<h2><div class="contents row">
-  <p><%= @nickname %>さんのお気に入り</p>
-</div></h2>
-</section>
+
 
 </main>
 
