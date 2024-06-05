@@ -1,1 +1,1 @@
-document.getElementById('favorite-btn').innerHTML = "<%= j(render partial: 'likes/like', locals: {item: @item}) %>"
+<%= render turbo_stream: turbo_stream.replace("favorite", partial: 'likes/like', locals: { item: @item }) %>

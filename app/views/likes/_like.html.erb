@@ -1,5 +1,5 @@
            <% if user_signed_in? && @item.liked_by?(current_user)%>
-            <%=link_to "登録済み", item_likes_path(@item.id),  data: { turbo_method: :delete }, class: "favorite-btn", remote: true %>
+            <%=link_to "登録済み", item_likes_path(@item), data: { turbo_method: :delete }, class: "favorite-btn"%>
           <% else %>
-             <%=link_to "お気に入り！", item_likes_path(@item.id), data: { turbo_method: :post }, class: "favorite-btn", remote: true %>
+            <%=link_to "お気に入り！", item_likes_path(@item), data: { turbo_method: :post }, class: "favorite-btn"%>
           <% end %>

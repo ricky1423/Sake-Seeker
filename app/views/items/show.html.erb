@@ -62,7 +62,7 @@
     </table>
     <% if user_signed_in?%>
     <div class="option">
-      <div id="favorite-btn">
+      <div id="favorite">
       <%= render partial: "likes/like", locals: { item: @item } %>
       </div>
     </div>
