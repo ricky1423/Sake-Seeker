@@ -29,7 +29,7 @@
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        <%= "¥#{@item.price}" %>
+        <%= "¥#{@item.price}円" %>
       </span>
       <span class="item-postage">
         <%= @item.prefecture %>
@@ -60,15 +60,15 @@
         </tr>
       </tbody>
     </table>
+    <% if user_signed_in?%>
     <div class="option">
-      <div class="favorite-btn">
-        <%#= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+      <div id="favorite-btn">
+      <%= render partial: "likes/like", locals: { item: @item } %>
       </div>
     </div>
+    <% end %>
   </div>
   <%# /商品の概要 %>
-
 </main>
 
 

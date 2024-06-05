@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_05_31_050443) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_05_073612) do
   create_table "items", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "name_kana", null: false
@@ -22,6 +22,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_31_050443) do
     t.text "explain", null: false
     t.text "image", null: false
     t.string "prefecture", null: false
+  end
+
+  create_table "likes", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_likes_on_item_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -38,4 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_31_050443) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "likes", "items"
+  add_foreign_key "likes", "users"
 end
