@@ -1,24 +1,53 @@
-# README
+# アプリケーション名
+-----
+Sake Seeker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+-----
+自分に合った日本酒を検索して、お気に入り登録で保存できる
 
-Things you may want to cover:
+# URL
+-----
+(https://sake-seeker-40584.onrender.com)
 
-* Ruby version
+# テスト用アカウント
+----
+・Basic認証ID：sake-app  
+・Basic認証パスワード：2222  
+・メールアドレス：sample@sanple.com  
+・パスワード:qqqqqq11
 
-* System dependencies
+# 機能
+----
+### 日本酒の検索機能
+----
+・ログインの有無に関わらず日本酒は検索できる。
+・キーワードにさえ当てはまれば表示されるようになっている。
+・クッリックしたら詳細も表示される。
 
-* Configuration
+## お気に入り機能
+・ログインしている時に限りお気に入り機能ができる。
+・お気に入りしたものはマイページに保存される。
 
-* Database creation
+# アプリケーションを作成した背景
+-----
+私自身日本酒が大好きで自宅で飲むことも多いのですが、近くの酒屋さんで買う事しかなく、もっとたくさんの日本酒に触れてみたいと感じた。なので自分で検索してお気に入りできるアプリが欲しいと思い自作した。
 
-* Database initialization
+# データベース設計
+----
+[![Image from Gyazo](https://i.gyazo.com/fc5f3daae887975ef1037fbc212b31a4.png)](https://gyazo.com/fc5f3daae887975ef1037fbc212b31a4)
 
-* How to run the test suite
+# 画面推移図
+----
+[![Image from Gyazo](https://i.gyazo.com/4bbb9e7ee1099d9d5193cdb5d957fe24.png)](https://gyazo.com/4bbb9e7ee1099d9d5193cdb5d957fe24)
 
-* Services (job queues, cache servers, search engines, etc.)
+# 開発環境
+----
+・Ruby  
+・HTML  
+・CSS  
+・JavaScript
 
-* Deployment instructions
-
-* ...
+# 改善点
+----
+本当はランキング機能・鵜入機能などをつけたかったが時間がなくできなかったので、時間ができたタイミングで追加していきたい。
